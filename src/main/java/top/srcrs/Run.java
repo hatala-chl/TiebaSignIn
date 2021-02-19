@@ -158,10 +158,10 @@ public class Run
         text += "成功: " + success.size() + " 失败: " + (followNum - success.size());
         String desp = "共 "+ followNum + " 贴吧\n\n";
         desp += "成功: " + success.size() + " 失败: " + (followNum - success.size());
-        String body = "text="+text+"&desp="+"TiebaSignIn运行结果\n\n"+desp;
+        String body = "title="+text+"&desp="+"TiebaSignIn运行结果\n\n"+desp;
         StringEntity entityBody = new StringEntity(body,"UTF-8");
         HttpClient client = HttpClients.createDefault();
-        HttpPost httpPost = new HttpPost("https://sc.ftqq.com/"+sckey+".send");
+        HttpPost httpPost = new HttpPost("https://sctapi.ftqq.com/"+sckey+".send");
         httpPost.addHeader("Content-Type","application/x-www-form-urlencoded");
         httpPost.setEntity(entityBody);
         HttpResponse resp = null;
